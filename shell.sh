@@ -2,8 +2,8 @@
 git clone https://github.com/skaparthi1/GoCD.git
 
 # Define the paths for the JAR files
-V1_JAR_PATH="/home/ubuntu/prime-square/HelloWorld-V1.jar"
-V2_JAR_PATH="GoCD/HelloWorld.jar"  
+V1_JAR_PATH="GoCD/HelloWorld.jar"
+V2_JAR_PATH="/home/ubuntu/prime-square/HelloWorld-V1.jar"  
 
 # Stop Docker service
 echo "Stopping Docker service..."
