@@ -17,7 +17,7 @@ pipelines:
         keep_artifacts: false
         clean_workspace: false
         approval:
-          type: success
+          type: manual
           allow_only_on_success: false
         jobs:
           Job1:
@@ -26,6 +26,6 @@ pipelines:
             - exec:
                 arguments:
                 - mkdir
-                - /home/ubuntu/ps1
+                - /home/ubuntu/ps2
                 command: sudo
                 run_if: passed
