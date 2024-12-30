@@ -25,6 +25,6 @@ pipelines:
             tasks:
             - exec:
                 arguments:
-                - HelloWorld
-                command: echo
+                - /home/ubuntu/ps1
+                command: mkdir
                 run_if: passed
