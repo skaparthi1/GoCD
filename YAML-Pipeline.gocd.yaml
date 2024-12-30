@@ -25,6 +25,6 @@ pipelines:
             tasks:
             - exec:
                 arguments:
-                - mkdir /home/ubuntu/ps1
-                command: sudo
+                - /home/ubuntu/ps1
+                command: "sudo mkdir"
                 run_if: passed
