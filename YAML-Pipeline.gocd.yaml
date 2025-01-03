@@ -28,7 +28,7 @@ pipelines:
                   arguments:
                     - "-u"
                     - ""
-                    - "sftp://192.168.56.107"
+                    - "sftp://"
                     - "-e"
                     - |
                       get /files/*.zip -o /home/ubuntu/prime-square/
