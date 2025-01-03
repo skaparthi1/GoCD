@@ -27,7 +27,7 @@ pipelines:
                   command: lftp
                   arguments:
                     - "-u"
-                    - "sftpuser,12345"
+                    - ""
                     - "sftp://192.168.56.107"
                     - "-e"
                     - |
