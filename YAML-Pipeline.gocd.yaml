@@ -23,13 +23,13 @@ pipelines:
           Job1:
             timeout: 0
             tasks:
-              - task: "Pull file from SFTP"
-                command: "lftp"
-                arguments:
-                  - "-u"
-                  - "sftpuser,12345"
-                  - "sftp://192.168.56.107"
-                options:
-                  inline_script: |
-                    get /files/*.zip -o /home/ubuntu/prime-square/
-                    bye
+              - exec:
+                  command: lftp
+                  arguments:
+                    - "-u"
+                    - "sftpuser,12345"
+                    - "sftp://192.168.56.107"
+                    - "-e"
+                    - |
+                      get /files/*.zip -o /home/ubuntu/prime-square/
+                      bye
