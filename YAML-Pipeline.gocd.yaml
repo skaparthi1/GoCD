@@ -27,9 +27,12 @@ pipelines:
                   command: lftp
                   arguments:
                     - "-u"
-                    - "sftpuser,12345"
+                    - "sftpuser,$SFTP_PASSWORD"  # Use environment variable for the password
                     - "sftp://192.168.56.107"
                     - "-e"
                     - |
-                      get /files/*.zip -o /home/ubuntu/prime-square/
-                      bye
+                        ls /files/   # List files for debugging
+                        get /files/*.zip -o /home/ubuntu/prime-square/
+                        bye
+    environment_variables:
+      SFTP_PASSWORD: "12345"  
