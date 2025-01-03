@@ -23,9 +23,13 @@ pipelines:
           Job1:
             timeout: 0
             tasks:
-            - exec:
+              - task: "Pull file from SFTP"
+                command: "lftp"
                 arguments:
-                - mkdir
-                - /home/ubuntu/ps2
-                command: sudo
-                run_if: passed
+                  - "-u"
+                  - "sftpuser,sftp-password"
+                  - "sftp://sftp-server-ip"
+                options:
+                  inline_script: |
+                    get /files/myfile.zip -o /home/ubuntu/sftp_downloads/
+                    bye
