@@ -27,9 +27,9 @@ pipelines:
                 command: "lftp"
                 arguments:
                   - "-u"
-                  - "sftpuser,sftp-password"
-                  - "sftp://sftp-server-ip"
+                  - "sftpuser,12345"
+                  - "sftp://192.168.56.107"
                 options:
                   inline_script: |
-                    get /files/myfile.zip -o /home/ubuntu/sftp_downloads/
+                    get /files/*.zip -o /home/ubuntu/prime-square/
                     bye
